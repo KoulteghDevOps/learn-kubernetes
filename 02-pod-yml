@@ -4,11 +4,7 @@ metadata:
   name: nginx
 spec:
   containers:
-  - name: nginx 01
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
-  - name: nginx 02
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
+  - name: nginx
+    image: nginx
+  - name: mongo
+    image: mongo
