@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+      app: nginx
+  template:
+    metadata:
+      labels:
+        tier: frontend
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.15 #nginx:1.15
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-cip
+spec:
+  selector:
+    tier: frontend
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
