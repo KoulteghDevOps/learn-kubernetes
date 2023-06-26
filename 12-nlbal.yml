@@ -28,7 +28,8 @@ kind: Service
 metadata:
   name: nginx-
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: nlb-ip
+#    service.beta.kubernetes.io/aws-load-balancer-type: nlb-ip
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: instance
 spec:
   type: LoadBalancer #create classic load balancer by default
   selector:
