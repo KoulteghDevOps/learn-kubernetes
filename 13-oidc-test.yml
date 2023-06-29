@@ -3,7 +3,8 @@ kind: ServiceAccount
 metadata:
   name:
   annotations:
-  eks.amazonaws.com/role-arn: arn:aws:iam::633788536644:role/oidc-test #i need to create mine to gain access into the image
+#  eks.amazonaws.com/role-arn: arn:aws:iam::633788536644:role/oidc-test #i need to create mine to gain access into the image
+  eks.amazonaws.com/role-arn: arn:aws:iam::878756956432:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/180BE925FE694537E50089BFB41BA03
 ---
 apiVersion: v1
 kind: ServiceAccount
